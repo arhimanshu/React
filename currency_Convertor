@@ -1,0 +1,26 @@
+import React from 'react'
+
+//index.js bydefault call hoti hi h isiliye neeche line m ./components/index.js nhi likhna pda
+import {Inputbox} from "./components"
+import useCurrencyinfo from './hooks/useCurrencyinfo'
+import useCurrencyinfo from './hooks/useCurrencyinfo'
+function App() {
+
+  const [amount, setamount] = useState(0)  
+  const [from, setfrom] = useState("usd")
+  const [to, setto] = useState("inr") 
+  const [ConvertedAmount, setConvertedAmount] = useState(0)
+
+  const Currencyinfo=useCurrencyinfo(from)
+   return (
+    <>
+    <div >
+    <h1 className='text-3xl text-red-700 text-center my-2 bg-black'>Currency App</h1>
+    <Input></Input>
+    </div>
+    </>
+
+  )
+}
+
+export default App
