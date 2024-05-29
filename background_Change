@@ -1,0 +1,32 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  const xxx="white";
+  const cc=()=>{
+    console.log("yoyo")
+    document.body.style.backgroundColor=xxx;
+  }
+  const [bgc ,setbgc] = useState("black")
+
+  return (
+    <>
+    // this div to set the width and height as full screen and yhi se background ka color ui m reflect hoga state change krne par
+      <div className="w-full h-screen" style={{backgroundColor:bgc}}>
+{/* fixed krne se bottom-12 work kra  inset-x-0 krne se x axis p center m a gyi flex wrap:zyada button ho to wrap krle next screen p le aae */}
+        <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 rounded-2xl w-auto">
+        <div className="fixed flex flex-wrap justify-center rounded-2xl w-fit">
+        <button className="text-{bgc} rounded-3xl bg-white px-4 py-2 mx-4 " onClick={()=>setbgc("red")}>Red</button>
+        <button className="text-{bgc} rounded-3xl bg-white px-4 py-2 mx-4" onClick={()=>setbgc("green")}>Green</button>
+        <button className="text-{bgc} rounded-3xl bg-white px-4 py-2 mx-4"onClick={()=>setbgc("yellow")}>Yellow</button>
+        <button className="text-{bgc} rounded-3xl bg-white px-4 py-2 mx-4" onClick={cc}>white</button>
+        </div>
+        </div>
+        </div>
+    </>
+  )
+} 
+
+export default App
